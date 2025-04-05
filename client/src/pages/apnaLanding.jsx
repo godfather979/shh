@@ -30,10 +30,10 @@ const LegalAI = () => {
   const tools = [
     {
       id: 1,
-      title: "Conflict Management",
+      title: "Compliance Validator",
       description: "AI-powered detection of contradicting clauses in legal documents",
       icon: "⚖️",
-      link: "/conflict-management",
+      link: "/compliance-validator",
     },
     {
       id: 2,
