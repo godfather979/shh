@@ -30,12 +30,8 @@ const App = () => {
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/onboarding" element={<OnboardingPage />} />
-            <Route path="/legal-drafting" element={<LegalDrafting />} />
 
-            <Route path="/document-summarizer" element={<ApnaDocSummarizer />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/create/:category" element={<CreateForm />} />
-            <Route path="/create/:category/text-editor" element={<TextEditor />} />
+            
 
             {/* Private Nested Routes */}
             <Route path="/" element={<AppLayout />}>
@@ -50,6 +46,13 @@ const App = () => {
                 <Route path="/testimony" element={<LegalAnalysis />} />
                 <Route path="/terms" element={<TermsCondi />} />
                 <Route path="/custom-documents" element={<CustomDocument />} />
+
+                <Route path="/legal-drafting" element={<LegalDrafting />} />
+                <Route path="/document-summarizer" element={<ApnaDocSummarizer />} />
+                <Route path="/create" element={<Create />} />
+                <Route path="/create/:category" element={<CreateForm />} />
+                <Route path="/create/:category/text-editor" element={<TextEditor />} />
+
                 <Route path="*" element={<h1>Not Found</h1>} />
             </Route>
         </Routes>
