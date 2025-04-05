@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRight } from 'lucide-react';
+// import { link } from 'fs';
 // import HeroSection from '@/components/hero';
 
 const LegalAI = () => {
@@ -32,36 +33,42 @@ const LegalAI = () => {
       title: "Conflict Management",
       description: "AI-powered detection of contradicting clauses in legal documents",
       icon: "⚖️",
+      link: "/conflict-management",
     },
     {
       id: 2,
       title: "Contract Analysis",
       description: "Deep insights into agreements with AI-driven analytics",
       icon: "📝",
+      link: "/contract-analysis",
     },
     {
       id: 3,
       title: "Case Research",
       description: "Explore relevant precedents and recent legal developments",
       icon: "🔍",
+      link: "/case-research",
     },
     {
       id: 4,
       title: "Document Creator",
       description: "Form-based document generation with live editing capabilities",
       icon: "📄",
+      link: "/document-creator",
     },
     {
       id: 5,
       title: "Legal Drafting",
       description: "Professionally formatted drafts from facts and prayer inputs",
       icon: "✍️",
+      link: "/legal-drafting",
     },
     {
       id: 6,
       title: "Document Summarizer",
       description: "Concise summaries of complex legal texts in seconds",
       icon: "📊",
+      link: "/document-summarizer",
     },
   ];
 
@@ -219,10 +226,18 @@ const LegalAI = () => {
                     </CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="ghost" className="text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-0">
-                      Learn more →
-                    </Button>
-                  </CardFooter>
+                <Button
+                    variant="ghost"
+                    className="text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-0"
+                    onClick={() => {
+                    window.location.href = tool.link; // Basic browser navigation
+                    // If you are using React Router, you would use something like:
+                    // navigate(tool.link);
+                    }}
+                >
+                    Learn more →
+                </Button>
+                </CardFooter>
                 </Card>
               </motion.div>
             ))}
