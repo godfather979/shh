@@ -1,115 +1,160 @@
 {
-  "Employee Bond for Non-Compete": {
-    "title": "Employee Bond for Non-Compete",
-    "description": "A legal agreement between an employer and an employee restricting the employee from engaging in competing businesses or disclosing trade secrets after employment termination.",
-    "fields": [
-      { "label": "Employee Name", "type": "text" },
-      { "label": "Employee Address", "type": "text" },
-      { "label": "Employer Name", "type": "text" },
-      { "label": "Employer Business Details", "type": "text" },
-      { "label": "Liquidated Damages", "type": "number" },
-      { "label": "Employee Role", "type": "text" },
-      { "label": "Non-Compete Duration", "type": "number", "placeholder": "in months/years" },
-      { "label": "Non-Compete Geographical Scope", "type": "text" },
-      { "label": "Date of Agreement", "type": "date" },
-      { "label": "Witness Signatures", "type": "text" }
-    ]
-  },
-  "Employee Service Agreement": {
-    "title": "Employee Service Agreement",
-    "description": "A formal contract defining the terms of employment, including job role, probation, salary, work hours, benefits, and arbitration clauses.",
-    "fields": [
-      { "label": "Employer Name", "type": "text" },
-      { "label": "Employer Registered Office Address", "type": "text" },
-      { "label": "Employee Name", "type": "text" },
-      { "label": "Employee Address", "type": "text" },
-      { "label": "Job Title/Post", "type": "text" },
-      { "label": "Probation Period", "type": "number", "placeholder": "in months" },
-      { "label": "Employment Duration", "type": "number", "placeholder": "in years/months" },
-      { "label": "Place of Posting", "type": "text" },
-      { "label": "Work Hours", "type": "number", "placeholder": "in hours per week" },
-      { "label": "Weekly Holiday", "type": "text" },
-      { "label": "Probation Stipend", "type": "number" },
-      { "label": "Basic Salary (After Confirmation)", "type": "number" },
-      { "label": "Benefits & Perks", "type": "text" },
-      { "label": "Arbitration Details", "type": "text" },
-      { "label": "Date of Agreement", "type": "date" },
-      { "label": "Signatures of Employer and Employee", "type": "text" },
-      { "label": "Witness Signatures", "type": "text" }
-    ]
-  },
-  "Confidential Information and Non-Disclosure Agreement (NDA)": {
-    "title": "Confidential Information and Non-Disclosure Agreement (NDA)",
-    "description": "A legally binding agreement between two parties to protect confidential business and technical information exchanged for potential collaboration.",
-    "fields": [
-      { "label": "Name of Party 1 (ABC)", "type": "text" },
-      { "label": "Address of Party 1", "type": "text" },
-      { "label": "Name of Party 2 (DEF)", "type": "text" },
-      { "label": "Address of Party 2", "type": "text" },
-      { "label": "Subject of Confidential Information (for both parties)", "type": "text" },
-      { "label": "Purpose of Disclosure", "type": "text" },
-      { "label": "Confidentiality Period", "type": "number", "placeholder": "in years" },
-      { "label": "Date of Agreement", "type": "date" },
-      { "label": "Authorized Signatory Name & Title for Party 1", "type": "text" },
-      { "label": "Authorized Signatory Name & Title for Party 2", "type": "text" }
-    ]
-  },
-  "Legal Notice for Non-Payment of Salary": {
-    "title": "Legal Notice for Non-Payment of Salary",
-    "description": "A formal legal notice sent to an employer demanding unpaid salary, reimbursement, and statutory benefits before taking legal action.",
-    "fields": [
-      { "label": "Name of Employee (Sender)", "type": "text" },
-      { "label": "Address of Employee", "type": "text" },
-      { "label": "Name of Company (Receiver)", "type": "text" },
-      { "label": "Name of Managing Director", "type": "text" },
-      { "label": "Date of Offer Letter", "type": "date" },
-      { "label": "Salary Amount (Per Month)", "type": "number" },
-      { "label": "Date of Joining", "type": "date" },
-      { "label": "Date of Termination", "type": "date" },
-      { "label": "Unpaid Salary Amount", "type": "number" },
-      { "label": "Additional Claims (Travel Expenses, Field Work Expenses, Bonus, etc.)", "type": "number" },
-      { "label": "Total Outstanding Amount", "type": "number" },
-      { "label": "Deadline for Payment", "type": "number", "placeholder": "in days" },
-      { "label": "Advocate’s Name", "type": "text" }
-    ]
-  },
-  "Legal Notice for Wrongful Termination": {
-    "title": "Legal Notice for Wrongful Termination",
-    "description": "A legal notice served to an employer for unlawfully terminating an employee without proper cause, demanding reinstatement and unpaid dues.",
-    "fields": [
-      { "label": "Client's Name", "type": "text" },
-      { "label": "Client's Address", "type": "text" },
-      { "label": "Employer's Name", "type": "text" },
-      { "label": "Employer's Address", "type": "text" },
-      { "label": "Date of Appointment", "type": "date" },
-      { "label": "Salary Amount", "type": "number" },
-      { "label": "Date of Termination", "type": "date" },
-      { "label": "Unpaid Salary Amount", "type": "number" },
-      { "label": "Travel Expenses Incurred", "type": "number" },
-      { "label": "Fieldwork Expenses", "type": "number" },
-      { "label": "Statutory Benefits Not Received", "type": "number" },
-      { "label": "Total Compensation Claimed", "type": "number" }
-    ]
-  },
-  "Civil Suit for Damages Due to Breach of Contract": {
-    "title": "Civil Suit for Damages Due to Breach of Contract",
-    "description": "A civil lawsuit seeking compensation for financial losses incurred due to a party’s failure to honor a contractual agreement.",
-    "fields": [
-      { "label": "Plaintiff's Name", "type": "text" },
-      { "label": "Plaintiff’s Age", "type": "number" },
-      { "label": "Plaintiff’s Occupation", "type": "text" },
-      { "label": "Plaintiff’s Address & Contact Details", "type": "text" },
-      { "label": "Defendant's Name", "type": "text" },
-      { "label": "Defendant’s Age", "type": "number" },
-      { "label": "Defendant’s Occupation", "type": "text" },
-      { "label": "Defendant’s Address & Contact Details", "type": "text" },
-      { "label": "Contract Start Date", "type": "date" },
-      { "label": "Contract End Date", "type": "date" },
-      { "label": "Date of Breach", "type": "date" },
-      { "label": "Details of Breach (Nature of Violation)", "type": "text" },
-      { "label": "Financial Damages Incurred", "type": "number" },
-      { "label": "Compensation Amount Claimed", "type": "number" },
-      { "label": "Interest & Additional Relief Sought", "type": "text" }
-    ]
-  }
+    "Employee Bond for Non-Compete": {
+        "title": "Employee Bond for Non-Compete",
+        "description": "A legal agreement between an employer and an employee restricting the employee from engaging in competing businesses or disclosing trade secrets after employment termination.",
+        "fields": [
+            { "label": "Employee Name", "type": "text" },
+            { "label": "Employee Address", "type": "text" },
+            { "label": "Employer Name", "type": "text" },
+            { "label": "Employer Business Details", "type": "text" },
+            { "label": "Liquidated Damages", "type": "number" },
+            { "label": "Employee Role", "type": "text" },
+            {
+                "label": "Non-Compete Duration",
+                "type": "number",
+                "placeholder": "in months/years"
+            },
+            { "label": "Non-Compete Geographical Scope", "type": "text" },
+            { "label": "Date of Agreement", "type": "date" },
+            { "label": "Witness Signatures", "type": "text" }
+        ]
+    },
+    "Employee Service Agreement": {
+        "title": "Employee Service Agreement",
+        "description": "A formal contract defining the terms of employment, including job role, probation, salary, work hours, benefits, and arbitration clauses.",
+        "fields": [
+            { "label": "Employer Name", "type": "text" },
+            { "label": "Employer Registered Office Address", "type": "text" },
+            { "label": "Employee Name", "type": "text" },
+            { "label": "Employee Address", "type": "text" },
+            { "label": "Job Title/Post", "type": "text" },
+            {
+                "label": "Probation Period",
+                "type": "number",
+                "placeholder": "in months"
+            },
+            {
+                "label": "Employment Duration",
+                "type": "number",
+                "placeholder": "in years/months"
+            },
+            { "label": "Place of Posting", "type": "text" },
+            {
+                "label": "Work Hours",
+                "type": "number",
+                "placeholder": "in hours per week"
+            },
+            { "label": "Weekly Holiday", "type": "text" },
+            { "label": "Probation Stipend", "type": "number" },
+            { "label": "Basic Salary (After Confirmation)", "type": "number" },
+            { "label": "Benefits & Perks", "type": "text" },
+            { "label": "Arbitration Details", "type": "text" },
+            { "label": "Date of Agreement", "type": "date" },
+            { "label": "Signatures of Employer and Employee", "type": "text" },
+            { "label": "Witness Signatures", "type": "text" }
+        ]
+    },
+    "Confidential Information and Non-Disclosure Agreement (NDA)": {
+        "title": "Confidential Information and Non-Disclosure Agreement (NDA)",
+        "description": "A legally binding agreement between two parties to protect confidential business and technical information exchanged for potential collaboration.",
+        "fields": [
+            { "label": "Name of Party 1 (ABC)", "type": "text" },
+            { "label": "Address of Party 1", "type": "text" },
+            { "label": "Name of Party 2 (DEF)", "type": "text" },
+            { "label": "Address of Party 2", "type": "text" },
+            {
+                "label": "Subject of Confidential Information (for both parties)",
+                "type": "text"
+            },
+            { "label": "Purpose of Disclosure", "type": "text" },
+            {
+                "label": "Confidentiality Period",
+                "type": "number",
+                "placeholder": "in years"
+            },
+            { "label": "Date of Agreement", "type": "date" },
+            {
+                "label": "Authorized Signatory Name & Title for Party 1",
+                "type": "text"
+            },
+            {
+                "label": "Authorized Signatory Name & Title for Party 2",
+                "type": "text"
+            }
+        ]
+    },
+    "Legal Notice for Non-Payment of Salary": {
+        "title": "Legal Notice for Non-Payment of Salary",
+        "description": "A formal legal notice sent to an employer demanding unpaid salary, reimbursement, and statutory benefits before taking legal action.",
+        "fields": [
+            { "label": "Name of Employee (Sender)", "type": "text" },
+            { "label": "Address of Employee", "type": "text" },
+            { "label": "Name of Company (Receiver)", "type": "text" },
+            { "label": "Name of Managing Director", "type": "text" },
+            { "label": "Date of Offer Letter", "type": "date" },
+            { "label": "Salary Amount (Per Month)", "type": "number" },
+            { "label": "Date of Joining", "type": "date" },
+            { "label": "Date of Termination", "type": "date" },
+            { "label": "Unpaid Salary Amount", "type": "number" },
+            {
+                "label": "Additional Claims (Travel Expenses, Field Work Expenses, Bonus, etc.)",
+                "type": "number"
+            },
+            { "label": "Total Outstanding Amount", "type": "number" },
+            {
+                "label": "Deadline for Payment",
+                "type": "number",
+                "placeholder": "in days"
+            },
+            { "label": "Advocate’s Name", "type": "text" }
+        ]
+    },
+    "Legal Notice for Wrongful Termination": {
+        "title": "Legal Notice for Wrongful Termination",
+        "description": "A legal notice served to an employer for unlawfully terminating an employee without proper cause, demanding reinstatement and unpaid dues.",
+        "fields": [
+            { "label": "Client's Name", "type": "text" },
+            { "label": "Client's Address", "type": "text" },
+            { "label": "Employer's Name", "type": "text" },
+            { "label": "Employer's Address", "type": "text" },
+            { "label": "Date of Appointment", "type": "date" },
+            { "label": "Salary Amount", "type": "number" },
+            { "label": "Date of Termination", "type": "date" },
+            { "label": "Unpaid Salary Amount", "type": "number" },
+            { "label": "Travel Expenses Incurred", "type": "number" },
+            { "label": "Fieldwork Expenses", "type": "number" },
+            { "label": "Statutory Benefits Not Received", "type": "number" },
+            { "label": "Total Compensation Claimed", "type": "number" }
+        ]
+    },
+    "Civil Suit for Damages Due to Breach of Contract": {
+        "title": "Civil Suit for Damages Due to Breach of Contract",
+        "description": "A civil lawsuit seeking compensation for financial losses incurred due to a party’s failure to honor a contractual agreement.",
+        "fields": [
+            { "label": "Plaintiff's Name", "type": "text" },
+            { "label": "Plaintiff’s Age", "type": "number" },
+            { "label": "Plaintiff’s Occupation", "type": "text" },
+            {
+                "label": "Plaintiff’s Address & Contact Details",
+                "type": "text"
+            },
+            { "label": "Defendant's Name", "type": "text" },
+            { "label": "Defendant’s Age", "type": "number" },
+            { "label": "Defendant’s Occupation", "type": "text" },
+            {
+                "label": "Defendant’s Address & Contact Details",
+                "type": "text"
+            },
+            { "label": "Contract Start Date", "type": "date" },
+            { "label": "Contract End Date", "type": "date" },
+            { "label": "Date of Breach", "type": "date" },
+            {
+                "label": "Details of Breach (Nature of Violation)",
+                "type": "text"
+            },
+            { "label": "Financial Damages Incurred", "type": "number" },
+            { "label": "Compensation Amount Claimed", "type": "number" },
+            { "label": "Interest & Additional Relief Sought", "type": "text" }
+        ]
+    }
 }
