@@ -13,11 +13,11 @@ const SidebarDemo = () => {
       href: "/compliance-validator", 
       icon: <img src="https://cdn-icons-png.flaticon.com/128/18564/18564698.png" className="h-6 w-6" alt="Conflict Management" />
     },
-    // { 
-    //   label: "Contract Analysis", 
-    //   href: "/contract-analysis", 
-    //   icon: <img src="https://cdn-icons-png.flaticon.com/128/17773/17773157.png" className="h-6 w-6" alt="Contract Analysis" />
-    // },
+    { 
+      label: "Aggrement Analysis", 
+      href: "/aggrement-analysis", 
+      icon: <img src="https://cdn-icons-png.flaticon.com/128/17773/17773157.png" className="h-6 w-6" alt="Contract Analysis" />
+    },
     // { 
     //   label: "Case Research", 
     //   href: "/case-research", 
