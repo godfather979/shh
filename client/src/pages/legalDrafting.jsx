@@ -15,11 +15,7 @@ const LegalDrafting = () => {
   const dummyLegalDrafts = [
     {
       "heading": "# Case Summary: Donoghue v Stevenson [1932] AC 562",
-      "summary": "## Facts:\nMrs. Donoghue consumed ginger beer purchased for her by a friend at a café. The bottle contained a decomposed snail, which she did not see until she had already drunk some of the beer. She subsequently became ill and sued the manufacturer, etc"
-    },
-    {
-      "heading": "# Legal Analysis",
-      "summary": "## Legal Principles:\nThis case established the modern concept of negligence in tort law, by setting out general principles whereby one person would owe another person a duty of care."
+      "summary": "## Facts:\nMrs. Donoghue consumed ginger beer purchased for her by a friend at a café. The bottle contained a decomposed snail, which she did not see until she had already drunk some of the beer. She subsequently became ill and sued the manufacturer, Stevenson, despite not having a direct contractual relationship with him.\n\n## Legal Issue:\nThe central legal question was whether Stevenson, as the manufacturer, owed a duty of care to Mrs. Donoghue, the ultimate consumer, in the absence of a contract between them.\n\n## Decision:\nThe House of Lords held that Stevenson did owe a duty of care to Mrs. Donoghue. This landmark case established the **'neighbour principle'**, articulated by Lord Atkin, which states that you owe a duty of care to your neighbour. Your neighbour is defined as 'persons who are so closely and directly affected by my act that I ought reasonably to have them in contemplation as being so affected when I am directing my mind to the acts or omissions which are called in question.'\n\n## Significance:\n* Established the modern tort of negligence.\n* Created the 'neighbour principle', a foundational concept in duty of care.\n* Recognized the liability of manufacturers to consumers even without a direct contractual relationship.\n* Significantly expanded the scope of potential negligence claims."
     }
   ];
 
