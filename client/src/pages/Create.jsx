@@ -46,7 +46,7 @@ export default function Create() {
     return (
         <>
             <div className='flex'>
-                <div className='container mx-auto px-10 py-10'>
+                <div className='container mx-auto px-16 py-10'>
                     <h1 className='text-3xl font-bold text-center mb-10'>
                         Legal Document Categories
                     </h1>
@@ -72,12 +72,12 @@ export default function Create() {
                     </div>
                 </div>
             </div>
-            <Link to='/custom-documents' className='absolute bottom-8 right-8'>
+            {/* <Link to='/custom-documents' className='absolute bottom-8 right-8'>
                 <Button className='flex justify-around items-center mx-2 p-6'>
                     <PlusCircleIcon className='w-4 h-4' />
                     <div className='text-lg'>Custom Documents</div>
                 </Button>
-            </Link>
+            </Link> */}
         </>
     );
 }

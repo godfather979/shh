@@ -29,15 +29,19 @@ const App = () => {
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/onboarding" element={<OnboardingPage />} />
+            
             <Route path="/document-summarizer" element={<ApnaDocSummarizer />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="/create/:category" element={<CreateForm />} />
+            <Route path="/create/:category/text-editor" element={<TextEditor />} />
 
             {/* Private Nested Routes */}
             <Route path="/" element={<AppLayout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/dashboard/docview" element={<DocView />} />
-                <Route path="/create" element={<Create />} />
+                {/* <Route path="/create" element={<Create />} />
                 <Route path="/create/:category" element={<CreateForm />} />
-                <Route path="/create/:category/text-editor" element={<TextEditor />} />
+                <Route path="/create/:category/text-editor" element={<TextEditor />} /> */}
                 <Route path="/news" element={<News />} />
                 <Route path="/compare" element={<Compare />} />
                 <Route path="/contracts" element={<Contracts />} />

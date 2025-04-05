@@ -54,7 +54,7 @@ const LegalAI = () => {
       title: "Document Creator",
       description: "Form-based document generation with live editing capabilities",
       icon: "📄",
-      link: "/document-creator",
+      link: "/create",
     },
     {
       id: 5,
