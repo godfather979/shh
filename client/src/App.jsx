@@ -17,12 +17,14 @@ import LegalAnalysis from "./pages/LegalAnalysis";
 import TermsCondi from "./pages/TermsCondi";
 import CustomDocument from "./pages/CustomDocument";
 import Landing from "./pages/Landing";
+import LegalAi from "./pages/apnaLanding";
+
 
 const App = () => {
     return (
         <Routes>
             {/* Public Routes */}
-            <Route path="/" element={<Landing />} />
+            <Route path="/" element={<LegalAi />} />
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/onboarding" element={<OnboardingPage />} />
