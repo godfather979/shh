@@ -1,115 +1,281 @@
 {
-  "Employee Bond for Non-Compete": {
-    "title": "Employee Bond for Non-Compete",
-    "description": "A legal agreement between an employer and an employee restricting the employee from engaging in competing businesses or disclosing trade secrets after employment termination.",
-    "fields": [
-      { "label": "Employee Name", "type": "text" },
-      { "label": "Employee Address", "type": "text" },
-      { "label": "Employer Name", "type": "text" },
-      { "label": "Employer Business Details", "type": "text" },
-      { "label": "Liquidated Damages", "type": "number" },
-      { "label": "Employee Role", "type": "text" },
-      { "label": "Non-Compete Duration", "type": "number", "placeholder": "in months/years" },
-      { "label": "Non-Compete Geographical Scope", "type": "text" },
-      { "label": "Date of Agreement", "type": "date" },
-      { "label": "Witness Signatures", "type": "text" }
-    ]
-  },
-  "Employee Service Agreement": {
-    "title": "Employee Service Agreement",
-    "description": "A formal contract defining the terms of employment, including job role, probation, salary, work hours, benefits, and arbitration clauses.",
-    "fields": [
-      { "label": "Employer Name", "type": "text" },
-      { "label": "Employer Registered Office Address", "type": "text" },
-      { "label": "Employee Name", "type": "text" },
-      { "label": "Employee Address", "type": "text" },
-      { "label": "Job Title/Post", "type": "text" },
-      { "label": "Probation Period", "type": "number", "placeholder": "in months" },
-      { "label": "Employment Duration", "type": "number", "placeholder": "in years/months" },
-      { "label": "Place of Posting", "type": "text" },
-      { "label": "Work Hours", "type": "number", "placeholder": "in hours per week" },
-      { "label": "Weekly Holiday", "type": "text" },
-      { "label": "Probation Stipend", "type": "number" },
-      { "label": "Basic Salary (After Confirmation)", "type": "number" },
-      { "label": "Benefits & Perks", "type": "text" },
-      { "label": "Arbitration Details", "type": "text" },
-      { "label": "Date of Agreement", "type": "date" },
-      { "label": "Signatures of Employer and Employee", "type": "text" },
-      { "label": "Witness Signatures", "type": "text" }
-    ]
-  },
-  "Confidential Information and Non-Disclosure Agreement (NDA)": {
-    "title": "Confidential Information and Non-Disclosure Agreement (NDA)",
-    "description": "A legally binding agreement between two parties to protect confidential business and technical information exchanged for potential collaboration.",
-    "fields": [
-      { "label": "Name of Party 1 (ABC)", "type": "text" },
-      { "label": "Address of Party 1", "type": "text" },
-      { "label": "Name of Party 2 (DEF)", "type": "text" },
-      { "label": "Address of Party 2", "type": "text" },
-      { "label": "Subject of Confidential Information (for both parties)", "type": "text" },
-      { "label": "Purpose of Disclosure", "type": "text" },
-      { "label": "Confidentiality Period", "type": "number", "placeholder": "in years" },
-      { "label": "Date of Agreement", "type": "date" },
-      { "label": "Authorized Signatory Name & Title for Party 1", "type": "text" },
-      { "label": "Authorized Signatory Name & Title for Party 2", "type": "text" }
-    ]
-  },
-  "Legal Notice for Non-Payment of Salary": {
-    "title": "Legal Notice for Non-Payment of Salary",
-    "description": "A formal legal notice sent to an employer demanding unpaid salary, reimbursement, and statutory benefits before taking legal action.",
-    "fields": [
-      { "label": "Name of Employee (Sender)", "type": "text" },
-      { "label": "Address of Employee", "type": "text" },
-      { "label": "Name of Company (Receiver)", "type": "text" },
-      { "label": "Name of Managing Director", "type": "text" },
-      { "label": "Date of Offer Letter", "type": "date" },
-      { "label": "Salary Amount (Per Month)", "type": "number" },
-      { "label": "Date of Joining", "type": "date" },
-      { "label": "Date of Termination", "type": "date" },
-      { "label": "Unpaid Salary Amount", "type": "number" },
-      { "label": "Additional Claims (Travel Expenses, Field Work Expenses, Bonus, etc.)", "type": "number" },
-      { "label": "Total Outstanding Amount", "type": "number" },
-      { "label": "Deadline for Payment", "type": "number", "placeholder": "in days" },
-      { "label": "Advocate’s Name", "type": "text" }
-    ]
-  },
-  "Legal Notice for Wrongful Termination": {
-    "title": "Legal Notice for Wrongful Termination",
-    "description": "A legal notice served to an employer for unlawfully terminating an employee without proper cause, demanding reinstatement and unpaid dues.",
-    "fields": [
-      { "label": "Client's Name", "type": "text" },
-      { "label": "Client's Address", "type": "text" },
-      { "label": "Employer's Name", "type": "text" },
-      { "label": "Employer's Address", "type": "text" },
-      { "label": "Date of Appointment", "type": "date" },
-      { "label": "Salary Amount", "type": "number" },
-      { "label": "Date of Termination", "type": "date" },
-      { "label": "Unpaid Salary Amount", "type": "number" },
-      { "label": "Travel Expenses Incurred", "type": "number" },
-      { "label": "Fieldwork Expenses", "type": "number" },
-      { "label": "Statutory Benefits Not Received", "type": "number" },
-      { "label": "Total Compensation Claimed", "type": "number" }
-    ]
-  },
-  "Civil Suit for Damages Due to Breach of Contract": {
-    "title": "Civil Suit for Damages Due to Breach of Contract",
-    "description": "A civil lawsuit seeking compensation for financial losses incurred due to a party’s failure to honor a contractual agreement.",
-    "fields": [
-      { "label": "Plaintiff's Name", "type": "text" },
-      { "label": "Plaintiff’s Age", "type": "number" },
-      { "label": "Plaintiff’s Occupation", "type": "text" },
-      { "label": "Plaintiff’s Address & Contact Details", "type": "text" },
-      { "label": "Defendant's Name", "type": "text" },
-      { "label": "Defendant’s Age", "type": "number" },
-      { "label": "Defendant’s Occupation", "type": "text" },
-      { "label": "Defendant’s Address & Contact Details", "type": "text" },
-      { "label": "Contract Start Date", "type": "date" },
-      { "label": "Contract End Date", "type": "date" },
-      { "label": "Date of Breach", "type": "date" },
-      { "label": "Details of Breach (Nature of Violation)", "type": "text" },
-      { "label": "Financial Damages Incurred", "type": "number" },
-      { "label": "Compensation Amount Claimed", "type": "number" },
-      { "label": "Interest & Additional Relief Sought", "type": "text" }
-    ]
-  }
+    "Domicile Certificate (Maharashtra)": {
+        "title": "Domicile Certificate (Maharashtra)",
+        "description": "An official document issued by the Maharashtra State Government certifying the individual's age, nationality, and domicile status, typically required for education, job applications, and government benefits.",
+        "fields": [
+            { "label": "Certificate Number", "type": "text" },
+            { "label": "Date of Issue", "type": "date" },
+            { "label": "District", "type": "text" },
+
+            { "label": "Applicant's Full Name", "type": "text" },
+            { "label": "Father's / Mother's Name", "type": "text" },
+            { "label": "Date of Birth", "type": "date" },
+            { "label": "Place of Birth", "type": "text" },
+
+            { "label": "Village", "type": "text" },
+            { "label": "Taluka / Tehsil", "type": "text" },
+            { "label": "District of Residence", "type": "text" },
+            { "label": "State", "type": "text", "default": "Maharashtra" },
+
+            {
+                "label": "List of Proofs Submitted",
+                "type": "textarea",
+                "placeholder": "e.g., UID, School Leaving Certificate, Ration Card, etc."
+            },
+
+            { "label": "Place of Issue", "type": "text" },
+            { "label": "Issued By (Officer Name)", "type": "text" },
+            {
+                "label": "Officer Designation",
+                "type": "text",
+                "default": "Tahsildar"
+            },
+            { "label": "Seal of Office (Y/N)", "type": "checkbox" },
+
+            {
+                "label": "Applicant Photograph",
+                "type": "file",
+                "accept": "image/*"
+            }
+        ]
+    },
+    "Rental Agreement": {
+        "title": "Rental Agreement",
+        "description": "A legal document executed between the landlady and tenant outlining the terms and conditions for renting a residential property.",
+        "fields": [
+            { "label": "Date of Agreement", "type": "date" },
+            { "label": "Place of Execution", "type": "text" },
+
+            { "label": "Landlady's Full Name", "type": "text" },
+            { "label": "Landlady's Age", "type": "number" },
+            { "label": "Landlady's Address", "type": "text" },
+
+            { "label": "Tenant's Full Name", "type": "text" },
+            { "label": "Tenant's Age", "type": "number" },
+            { "label": "Tenant's Permanent Address", "type": "text" },
+            { "label": "Tenant's ID Card Number", "type": "text" },
+            { "label": "ID Issued By", "type": "text" },
+
+            { "label": "Property Address", "type": "text" },
+            { "label": "Property Size (Sqft)", "type": "number" },
+            { "label": "Number of Kitchens", "type": "number" },
+            { "label": "Fittings and Equipment Details", "type": "textarea" },
+
+            {
+                "label": "Stamp Paper Value",
+                "type": "text",
+                "placeholder": "e.g., Rs. 100"
+            },
+            {
+                "label": "Demised Premises Description",
+                "type": "textarea"
+            },
+            {
+                "label": "Signed By Landlady (Y/N)",
+                "type": "checkbox"
+            },
+            {
+                "label": "Signed By Tenant (Y/N)",
+                "type": "checkbox"
+            }
+        ]
+    },
+    "EWS Certificate Application": {
+        "title": "EWS Certificate Application",
+        "description": "An official request submitted by individuals belonging to the Economically Weaker Section (EWS) of Indian society to obtain a certificate that enables them to avail reservations in education, jobs, and other government schemes under the EWS quota.",
+        "fields": [
+            { "label": "Certificate Number", "type": "text" },
+            { "label": "Date of Issue", "type": "date" },
+            { "label": "Applicable Year", "type": "text" },
+
+            { "label": "Applicant's Full Name", "type": "text" },
+            { "label": "Father's / Husband's Name", "type": "text" },
+            { "label": "Residential Address", "type": "text" },
+            { "label": "Village or Street", "type": "text" },
+            { "label": "Post Office", "type": "text" },
+            { "label": "District", "type": "text" },
+            { "label": "State", "type": "text" },
+            { "label": "PIN Code", "type": "number" },
+
+            { "label": "Financial Year", "type": "text" },
+            {
+                "label": "Annual Family Income",
+                "type": "number",
+                "placeholder": "e.g., 750000"
+            },
+            {
+                "label": "Caste Category",
+                "type": "text",
+                "placeholder": "e.g., General (Unreserved)"
+            },
+
+            { "label": "Officer Name", "type": "text" },
+            { "label": "Officer Designation", "type": "text" },
+            { "label": "Seal of Office (Y/N)", "type": "checkbox" },
+
+            {
+                "label": "Applicant Photograph",
+                "type": "file",
+                "accept": "image/*"
+            }
+        ]
+    },
+    "Employee Bond for Non-Compete": {
+        "title": "Employee Bond for Non-Compete",
+        "description": "A legal agreement between an employer and an employee restricting the employee from engaging in competing businesses or disclosing trade secrets after employment termination.",
+        "fields": [
+            { "label": "Employee Name", "type": "text" },
+            { "label": "Employee Address", "type": "text" },
+            { "label": "Employer Name", "type": "text" },
+            { "label": "Employer Business Details", "type": "text" },
+            { "label": "Liquidated Damages", "type": "number" },
+            { "label": "Employee Role", "type": "text" },
+            {
+                "label": "Non-Compete Duration",
+                "type": "number",
+                "placeholder": "in months/years"
+            },
+            { "label": "Non-Compete Geographical Scope", "type": "text" },
+            { "label": "Date of Agreement", "type": "date" },
+            { "label": "Witness Signatures", "type": "text" }
+        ]
+    },
+    "Employee Service Agreement": {
+        "title": "Employee Service Agreement",
+        "description": "A formal contract defining the terms of employment, including job role, probation, salary, work hours, benefits, and arbitration clauses.",
+        "fields": [
+            { "label": "Employer Name", "type": "text" },
+            { "label": "Employer Registered Office Address", "type": "text" },
+            { "label": "Employee Name", "type": "text" },
+            { "label": "Employee Address", "type": "text" },
+            { "label": "Job Title/Post", "type": "text" },
+            {
+                "label": "Probation Period",
+                "type": "number",
+                "placeholder": "in months"
+            },
+            {
+                "label": "Employment Duration",
+                "type": "number",
+                "placeholder": "in years/months"
+            },
+            { "label": "Place of Posting", "type": "text" },
+            {
+                "label": "Work Hours",
+                "type": "number",
+                "placeholder": "in hours per week"
+            },
+            { "label": "Weekly Holiday", "type": "text" },
+            { "label": "Probation Stipend", "type": "number" },
+            { "label": "Basic Salary (After Confirmation)", "type": "number" },
+            { "label": "Benefits & Perks", "type": "text" },
+            { "label": "Arbitration Details", "type": "text" },
+            { "label": "Date of Agreement", "type": "date" },
+            { "label": "Signatures of Employer and Employee", "type": "text" },
+            { "label": "Witness Signatures", "type": "text" }
+        ]
+    },
+    "Confidential Information and Non-Disclosure Agreement (NDA)": {
+        "title": "Confidential Information and Non-Disclosure Agreement (NDA)",
+        "description": "A legally binding agreement between two parties to protect confidential business and technical information exchanged for potential collaboration.",
+        "fields": [
+            { "label": "Name of Party 1 (ABC)", "type": "text" },
+            { "label": "Address of Party 1", "type": "text" },
+            { "label": "Name of Party 2 (DEF)", "type": "text" },
+            { "label": "Address of Party 2", "type": "text" },
+            {
+                "label": "Subject of Confidential Information (for both parties)",
+                "type": "text"
+            },
+            { "label": "Purpose of Disclosure", "type": "text" },
+            {
+                "label": "Confidentiality Period",
+                "type": "number",
+                "placeholder": "in years"
+            },
+            { "label": "Date of Agreement", "type": "date" },
+            {
+                "label": "Authorized Signatory Name & Title for Party 1",
+                "type": "text"
+            },
+            {
+                "label": "Authorized Signatory Name & Title for Party 2",
+                "type": "text"
+            }
+        ]
+    },
+    "Legal Notice for Non-Payment of Salary": {
+        "title": "Legal Notice for Non-Payment of Salary",
+        "description": "A formal legal notice sent to an employer demanding unpaid salary, reimbursement, and statutory benefits before taking legal action.",
+        "fields": [
+            { "label": "Name of Employee (Sender)", "type": "text" },
+            { "label": "Address of Employee", "type": "text" },
+            { "label": "Name of Company (Receiver)", "type": "text" },
+            { "label": "Name of Managing Director", "type": "text" },
+            { "label": "Date of Offer Letter", "type": "date" },
+            { "label": "Salary Amount (Per Month)", "type": "number" },
+            { "label": "Date of Joining", "type": "date" },
+            { "label": "Date of Termination", "type": "date" },
+            { "label": "Unpaid Salary Amount", "type": "number" },
+            {
+                "label": "Additional Claims (Travel Expenses, Field Work Expenses, Bonus, etc.)",
+                "type": "number"
+            },
+            { "label": "Total Outstanding Amount", "type": "number" },
+            {
+                "label": "Deadline for Payment",
+                "type": "number",
+                "placeholder": "in days"
+            },
+            { "label": "Advocate’s Name", "type": "text" }
+        ]
+    },
+    "Legal Notice for Wrongful Termination": {
+        "title": "Legal Notice for Wrongful Termination",
+        "description": "A legal notice served to an employer for unlawfully terminating an employee without proper cause, demanding reinstatement and unpaid dues.",
+        "fields": [
+            { "label": "Client's Name", "type": "text" },
+            { "label": "Client's Address", "type": "text" },
+            { "label": "Employer's Name", "type": "text" },
+            { "label": "Employer's Address", "type": "text" },
+            { "label": "Date of Appointment", "type": "date" },
+            { "label": "Salary Amount", "type": "number" },
+            { "label": "Date of Termination", "type": "date" },
+            { "label": "Unpaid Salary Amount", "type": "number" },
+            { "label": "Travel Expenses Incurred", "type": "number" },
+            { "label": "Fieldwork Expenses", "type": "number" },
+            { "label": "Statutory Benefits Not Received", "type": "number" },
+            { "label": "Total Compensation Claimed", "type": "number" }
+        ]
+    },
+    "Civil Suit for Damages Due to Breach of Contract": {
+        "title": "Civil Suit for Damages Due to Breach of Contract",
+        "description": "A civil lawsuit seeking compensation for financial losses incurred due to a party’s failure to honor a contractual agreement.",
+        "fields": [
+            { "label": "Plaintiff's Name", "type": "text" },
+            { "label": "Plaintiff’s Age", "type": "number" },
+            { "label": "Plaintiff’s Occupation", "type": "text" },
+            {
+                "label": "Plaintiff’s Address & Contact Details",
+                "type": "text"
+            },
+            { "label": "Defendant's Name", "type": "text" },
+            { "label": "Defendant’s Age", "type": "number" },
+            { "label": "Defendant’s Occupation", "type": "text" },
+            {
+                "label": "Defendant’s Address & Contact Details",
+                "type": "text"
+            },
+            { "label": "Contract Start Date", "type": "date" },
+            { "label": "Contract End Date", "type": "date" },
+            { "label": "Date of Breach", "type": "date" },
+            {
+                "label": "Details of Breach (Nature of Violation)",
+                "type": "text"
+            },
+            { "label": "Financial Damages Incurred", "type": "number" },
+            { "label": "Compensation Amount Claimed", "type": "number" },
+            { "label": "Interest & Additional Relief Sought", "type": "text" }
+        ]
+    }
 }
