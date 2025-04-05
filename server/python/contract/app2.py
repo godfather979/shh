@@ -2,8 +2,15 @@ import os
 import streamlit as st
 import PyPDF2
 import pandas as pd
-from langchain_ollama import OllamaLLM
-from langchain_core.prompts import ChatPromptTemplate
+import os
+import streamlit as st
+from groq import Groq
+from dotenv import load_dotenv
+import google.generativeai as genai
+
+load_dotenv()
+
+
 
 # Template for the Llama model
 template = (
@@ -47,26 +54,40 @@ gdpr_template = (
     """
 )
 
-# Initialize Ollama Llama model
-ollama_model = OllamaLLM(model="llama3.1")
+
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+# Initialize Gemini model
+gemini_model = genai.GenerativeModel("gemini-2.0-flash")
 
 @st.cache_data
-def parse_with_ollama(dom_chunks, parse_description):
-    prompt = ChatPromptTemplate.from_template(template)
-    chain = prompt | ollama_model
-    
+def parse_with_gemini(dom_chunks, parse_description):
+    # Combine DOM chunks
     combined_content = " ".join(dom_chunks)
-    response = chain.invoke({"dom_content": combined_content, "parse_description": parse_description})
-    return response
+
+    # Format your prompt
+    prompt_text = template.format(dom_content=combined_content, parse_description=parse_description)
+
+    # Call Gemini model
+    response = gemini_model.generate_content(prompt_text)
+
+    return response.text
 
 @st.cache_data
 def check_gdpr_compliance(dom_chunks, gdpr_guidelines):
-    prompt = ChatPromptTemplate.from_template(gdpr_template)
-    chain = prompt | ollama_model
-    
+    # Combine content into a single string
     combined_content = " ".join(dom_chunks)
-    response = chain.invoke({"dom_content": combined_content, "gdpr_guidelines": gdpr_guidelines})
-    return response
+
+    # Format the prompt using your GDPR template
+    prompt_text = gdpr_template.format(dom_content=combined_content, gdpr_guidelines=gdpr_guidelines)
+
+    # Generate response from Gemini
+    response = gemini_model.generate_content(prompt_text)
+
+    return response.text
+
+
+
 
 def extract_text_from_pdf(uploaded_pdf):
     pdf_reader = PyPDF2.PdfReader(uploaded_pdf)
@@ -95,7 +116,7 @@ def app():
         
         # Parse clauses
         parse_description = "List all legal clauses in the given contract and categorize the high-risk ones, along with suggesting changes. Give output in tabular format. Keep the reply concise."
-        parsed_output = parse_with_ollama(dom_chunks, parse_description)
+        parsed_output = parse_with_gemini(dom_chunks, parse_description)
         st.subheader("Generated Legal Clauses and High-Risk Categories")
         st.markdown(parsed_output)
         
