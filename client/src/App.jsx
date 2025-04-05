@@ -18,6 +18,7 @@ import TermsCondi from "./pages/TermsCondi";
 import CustomDocument from "./pages/CustomDocument";
 import Landing from "./pages/Landing";
 import LegalAi from "./pages/apnaLanding";
+import ApnaDocSummarizer from "./pages/ApnaDocSummarizer";
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/onboarding" element={<OnboardingPage />} />
+            <Route path="/document-summarizer" element={<ApnaDocSummarizer />} />
 
             {/* Private Nested Routes */}
             <Route path="/" element={<AppLayout />}>
