@@ -273,7 +273,8 @@ export default function TextEditor() {
             )}
 
             <div className='flex flex-col md:flex-row h-full max-w-full mx-auto p-4 gap-4'>
-                <div className='flex flex-col w-full md:w-2/3 items-center'>
+                {/* Editor Section */}
+                <div className='flex-grow flex flex-col items-center'>
                     <h1 className='text-2xl font-bold mb-4'>
                         EWS Certificate Editor
                     </h1>
@@ -332,15 +333,21 @@ export default function TextEditor() {
                         </TooltipProvider>
                     </div>
                 </div>
-                <div className='w-full md:w-1/3 mt-4 md:mt-0'>
+
+                {/* Version History Panel */}
+                <div className='w-[300px] mt-4 md:mt-0'>
                     <h2 className='text-xl font-semibold mb-4'>
                         Version History
                     </h2>
-                    <ScrollArea className='h-[calc(100vh-8rem)]'>
+                    <ScrollArea className='h-full max-h-[calc(100vh-8rem)]'>
                         {versions.map(version => (
                             <div
                                 key={version.id}
-                                className={`p-2 mb-2 rounded cursor-pointer ${version.id === currentVersionId ? 'bg-primary text-primary-foreground' : 'hover:bg-secondary'}`}
+                                className={`p-2 mb-2 rounded cursor-pointer ${
+                                    version.id === currentVersionId
+                                        ? 'bg-primary text-primary-foreground'
+                                        : 'hover:bg-secondary'
+                                }`}
                                 onClick={() => switchVersion(version.id)}
                             >
                                 <h3 className='font-medium'>
