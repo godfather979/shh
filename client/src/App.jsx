@@ -18,6 +18,7 @@ import TermsCondi from "./pages/TermsCondi";
 import CustomDocument from "./pages/CustomDocument";
 import Landing from "./pages/Landing";
 import LegalAi from "./pages/apnaLanding";
+import LegalDrafting from "./pages/legalDrafting";
 import ApnaDocSummarizer from "./pages/ApnaDocSummarizer";
 
 
@@ -29,7 +30,8 @@ const App = () => {
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/onboarding" element={<OnboardingPage />} />
-            
+            <Route path="/legal-drafting" element={<LegalDrafting />} />
+
             <Route path="/document-summarizer" element={<ApnaDocSummarizer />} />
             <Route path="/create" element={<Create />} />
             <Route path="/create/:category" element={<CreateForm />} />
