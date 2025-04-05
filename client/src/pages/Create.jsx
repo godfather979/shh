@@ -59,10 +59,10 @@ export default function Create() {
                             >
                                 <Card className='flex flex-col h-full transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg'>
                                     <CardHeader>
-                                        <CardTitle>{category}</CardTitle>
+                                    <CardTitle className="text-lg ">{category}</CardTitle>
                                     </CardHeader>
                                     <CardContent className='flex-grow'>
-                                        <CardDescription>
+                                    <CardDescription className="text-md">
                                             {descriptions[category]}
                                         </CardDescription>
                                     </CardContent>
