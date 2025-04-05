@@ -20,6 +20,7 @@ import Landing from "./pages/Landing";
 import LegalAi from "./pages/apnaLanding";
 import LegalDrafting from "./pages/legalDrafting";
 import ApnaDocSummarizer from "./pages/ApnaDocSummarizer";
+import Compliance from "./pages/Compliance";
 
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
                 <Route path="/testimony" element={<LegalAnalysis />} />
                 <Route path="/terms" element={<TermsCondi />} />
                 <Route path="/custom-documents" element={<CustomDocument />} />
+                <Route path="/compliance-validator" element={<Compliance />} />
 
                 <Route path="/legal-drafting" element={<LegalDrafting />} />
                 <Route path="/document-summarizer" element={<ApnaDocSummarizer />} />
