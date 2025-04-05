@@ -1,0 +1,110 @@
+1. Title: Employee Bond for Non-Compete
+Description: A legal agreement between an employer and an employee restricting the employee from engaging in competing businesses or disclosing trade secrets after employment termination.
+Required Input Fields:
+
+Employee Name
+Employee Address
+Employer Name
+Employer Business Details
+Amount of Liquidated Damages
+Employment Role & Responsibilities
+Non-Compete Duration
+Non-Compete Geographical Scope
+Date of Agreement
+Witness Signatures
+
+
+2. Title: Employee Service Agreement
+Description: A formal contract defining the terms of employment, including job role, probation, salary, work hours, benefits, and arbitration clauses.
+Required Input Fields:
+
+Employer Name
+Employer Registered Office Address
+Employee Name
+Employee Address
+Job Title/Post
+Probation Period
+Employment Duration
+Place of Posting
+Work Hours
+Weekly Holiday
+Probation Stipend
+Basic Salary (After Confirmation)
+Benefits & Perks
+Arbitration Details
+Date of Agreement
+Signatures of Employer and Employee
+Witness Signatures
+
+
+3. Document Title: Confidential Information and Non-Disclosure Agreement (NDA)
+Description: A legally binding agreement between two parties to protect confidential business and technical information exchanged for potential collaboration.
+Required Input Fields:
+
+Name of Party 1 (ABC)
+Address of Party 1
+Name of Party 2 (DEF)
+Address of Party 2
+Subject of Confidential Information (for both parties)
+Purpose of Disclosure
+Confidentiality Period (in years)
+Date of Agreement
+Authorized Signatory Name & Title for Party 1
+Authorized Signatory Name & Title for Party 2
+
+
+4. Document Title: Legal Notice for Non-Payment of Salary
+Description: A formal legal notice sent to an employer demanding unpaid salary, reimbursement, and statutory benefits before taking legal action.
+Required Input Fields:
+
+Name of Employee (Sender)
+Address of Employee
+Name of Company (Receiver)
+Name of Managing Director
+Date of Offer Letter
+Salary Amount (Per Month)
+Date of Joining
+Date of Termination
+Unpaid Salary Amount
+Additional Claims (Travel Expenses, Field Work Expenses, Bonus, etc.)
+Total Outstanding Amount
+Deadline for Payment (15 days or as specified)
+Advocate’s Name
+
+
+5. Wrongful Termination
+Title: Legal Notice for Wrongful Termination
+Short Description: A legal notice served to an employer for unlawfully terminating an employee without proper cause, demanding reinstatement and unpaid dues.
+
+Required Input Fields:
+Client's Name
+Client's Address
+Employer's Name
+Employer's Address
+Date of Appointment
+Salary Amount
+Date of Termination
+Unpaid Salary Amount
+Travel Expenses Incurred
+Fieldwork Expenses
+Statutory Benefits Not Received
+Total Compensation Claimed
+
+
+6. Damage for Breach of Contract
+Title: Civil Suit for Damages Due to Breach of Contract
+Short Description: A civil lawsuit seeking compensation for financial losses incurred due to a party’s failure to honor a contractual agreement.
+
+Required Input Fields:
+Plaintiff's Name
+Plaintiff’s Age & Occupation
+Plaintiff’s Address & Contact Details
+Defendant's Name
+Defendant’s Age & Occupation
+Defendant’s Address & Contact Details
+Contract Details (Start Date, End Date)
+Date of Breach
+Details of Breach (Nature of Violation)
+Financial Damages Incurred
+Compensation Amount Claimed
+Interest & Additional Relief Sought
