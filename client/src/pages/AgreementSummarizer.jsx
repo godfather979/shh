@@ -14,6 +14,8 @@ import {
 import { FileUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import FileUpload from '../components/FileUpload';
+import { Loader2, Upload } from 'lucide-react';
 
 const ipcDummyData = {
     'IPC Section 354 - Outraging Modesty of Woman': 0.6809,
@@ -50,6 +52,9 @@ const COLORS = ['#34d399', '#facc15', '#f87171'];
 const AgreementSummarizer = () => {
     const [file, setFile] = useState(null);
     const [showResults, setShowResults] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);   
+
 
     const handleFileUpload = e => {
         const uploaded = e.target.files[0];
@@ -76,9 +81,55 @@ const AgreementSummarizer = () => {
         })
     );
 
+    const handleUpload = async () => {
+        if (!file) return;
+        const formData = new FormData();
+        formData.append('file', file);
+      
+        try {
+          setLoading(true);
+          setError(null);
+      
+          // Simulate API delay + success
+          setTimeout(() => {
+            console.log('File uploaded successfully!');
+            setShowResults(true);
+            setLoading(false);
+          }, 1000);
+      
+          // ✅ Replace with real API later
+        } catch (err) {
+          setError('An error occurred while uploading or processing the file.');
+          console.error(err);
+          setLoading(false);
+        }
+      };
+
+      const MotionBar = (props) => {
+        const { x, y, width, height, fill } = props;
+    
+        return (
+            <motion.rect
+                x={x}
+                y={y}
+                width={width}
+                height={height}
+                fill={fill}
+                rx={8}
+                initial={{ scaleY: 1 }}
+                whileHover={{
+                    scaleY: 1.05,
+                    originY: 1,
+                    transition: { duration: 0.3, ease: 'easeOut' },
+                }}
+            />
+        );
+    };
+    
+    
     return (
         <div className='p-6 space-y-6'>
-            <Card className='bg-gradient-to-br from-indigo-100 to-white shadow-xl'>
+            {/* <Card className='bg-gradient-to-br from-indigo-100 to-white shadow-xl'>
                 <CardContent className='p-6 flex flex-col items-center space-y-4'>
                     <FileUp className='h-10 w-10 text-indigo-600' />
                     <input
@@ -94,7 +145,37 @@ const AgreementSummarizer = () => {
                         {file ? 'Replace File' : 'Upload Agreement File'}
                     </label>
                 </CardContent>
-            </Card>
+            </Card> */}
+            <motion.div
+                className='max-w-2xl mx-auto mb-12 bg-white p-6 rounded-xl shadow-md border border-slate-200'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+            >
+            <FileUpload onFileSelect={setFile} /> {/* ✅ Pass setFile directly */}
+                {file && (
+                    <div className="mt-4">
+                    <p className="text-sm text-gray-600">File received for agreement analysis:</p>
+                    <p className="text-blue-700 font-medium">{file.name}</p>
+                    </div>
+                )}
+
+
+                <div className="w-full flex justify-center">
+                <button
+                    onClick={handleUpload}
+                    disabled={!file || loading}
+                    className='mt-4 w-auto inline-flex items-center gap-2 px-6 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition disabled:opacity-50 disabled:cursor-not-allowed'
+                >
+                    {loading ? (
+                    <Loader2 className='w-4 h-4 animate-spin' />
+                    ) : (
+                    <Upload className='w-4 h-4' />
+                    )}
+                    Analyze
+                </button>
+                </div>
+            </motion.div>
 
             {showResults && (
                 <motion.div
@@ -103,49 +184,58 @@ const AgreementSummarizer = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
                 >
-                    {/* IPC Chart - Vertical & Clean */}
-                    <Card className='p-4 shadow-lg rounded-2xl'>
-                        <h2 className='text-lg font-semibold mb-2 text-indigo-700'>
-                            IPC Sections Detected
-                        </h2>
-                        <ResponsiveContainer width='100%' height={300}>
-                            <BarChart
-                                data={ipcChartData}
-                                margin={{
-                                    top: 10,
-                                    right: 20,
-                                    bottom: 50,
-                                    left: 10,
+                    <Card className="p-4 pt-6 pb-3 shadow-lg rounded-2xl bg-white">
+                    <h2 className="text-lg font-semibold mb-6 text-indigo-700">
+                        IPC Sections Detected
+                    </h2>
+
+                    <ResponsiveContainer width="100%" height={300}>
+                        <BarChart
+                            data={ipcChartData}
+                            margin={{ top: 0, right: 20, bottom: 30, left: 10 }} // shifted chart lower
+                        >
+                            <XAxis
+                                dataKey="shortLabel"
+                                angle={-30}
+                                textAnchor="end"
+                                interval={0}
+                                height={60}
+                                tick={{ fontSize: 12, fill: '#334155', fontWeight: 500 }}
+                            />
+                            <YAxis
+                                tick={{ fontSize: 12, fill: '#64748b' }}
+                                axisLine={false}
+                                tickLine={false}
+                            />
+                            <Tooltip
+                                cursor={{ fill: 'rgba(79, 70, 229, 0.05)' }}
+                                contentStyle={{
+                                    borderRadius: '8px',
+                                    border: '1px solid #e0e7ff',
+                                    backgroundColor: '#f8fafc',
+                                    fontSize: '14px',
+                                    color: '#1e293b',
                                 }}
-                            >
-                                <XAxis
-                                    dataKey='shortLabel'
-                                    angle={-30}
-                                    textAnchor='end'
-                                    interval={0}
-                                    height={60}
-                                    tick={{ fontSize: 12 }}
-                                />
-                                <YAxis />
-                                <Tooltip
-                                    formatter={(value, name, props) => [
-                                        `${value}%`,
-                                        'Likelihood',
-                                    ]}
-                                    labelFormatter={label =>
-                                        ipcChartData.find(
-                                            d => d.shortLabel === label
-                                        )?.section
-                                    }
-                                />
-                                <Bar
-                                    dataKey='score'
-                                    fill='#4f46e5'
-                                    radius={[8, 8, 0, 0]}
-                                />
-                            </BarChart>
-                        </ResponsiveContainer>
-                    </Card>
+                                formatter={(value) => [`${value}%`, 'Likelihood']}
+                                labelFormatter={(label) =>
+                                    ipcChartData.find((d) => d.shortLabel === label)?.section
+                                }
+                            />
+                            <Bar
+                                dataKey="score"
+                                fill="url(#barGradient)"
+                                shape={<MotionBar />}
+                            />
+                            <defs>
+                                <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stopColor="#6366f1" />
+                                    <stop offset="100%" stopColor="#818cf8" />
+                                </linearGradient>
+                            </defs>
+                        </BarChart>
+                    </ResponsiveContainer>
+                </Card>
+
 
                     {/* Statute Pie Chart */}
                     <Card className='p-4 shadow-lg rounded-2xl'>
