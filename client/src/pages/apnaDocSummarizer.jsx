@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import FileUpload from '../components/FileUpload'; // Assuming this component exists
+import Chatbot from '../components/ChatBot'; // Assuming this component exists
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'; // Import remark-gfm for table support
 
@@ -279,6 +280,7 @@ const ApnaDocSummarizer = () => {
           </motion.div>
         )}
       </div>
+      <Chatbot mockJson={mockResponse} />
     </div>
   );
 };
