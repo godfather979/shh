@@ -49,7 +49,7 @@ const App = () => {
                 <Route path="/terms" element={<TermsCondi />} />
                 <Route path="/custom-documents" element={<CustomDocument />} />
                 <Route path="/compliance-validator" element={<Compliance />} />
-                <Route path="/aggrement-analysis" element={<AgreementSummarizer />} />
+                <Route path="/agreement-analysis" element={<AgreementSummarizer />} />
 
                 <Route path="/legal-drafting" element={<LegalDrafting />} />
                 <Route path="/document-summarizer" element={<ApnaDocSummarizer />} />

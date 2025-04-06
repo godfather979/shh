@@ -14,8 +14,8 @@ const SidebarDemo = () => {
       icon: <img src="https://cdn-icons-png.flaticon.com/128/18564/18564698.png" className="h-6 w-6" alt="Conflict Management" />
     },
     { 
-      label: "Aggrement Analysis", 
-      href: "/aggrement-analysis", 
+      label: "Agreement Analysis", 
+      href: "/agreement-analysis", 
       icon: <img src="https://cdn-icons-png.flaticon.com/128/17773/17773157.png" className="h-6 w-6" alt="Contract Analysis" />
     },
     // { 
