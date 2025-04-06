@@ -27,28 +27,43 @@ const ApnaDocSummarizer = () => {
 
 
   const handleFileUpload = async (file) => {
-    // This function should now be correctly triggered
     if (!file) {
-      // Handle case where file is removed (file is null)
       console.log("File removed or invalid.");
       setIsLoading(false);
       setResponseData(null);
       setShowSummary(false);
-      return; // Exit if no valid file
+      return;
     }
-
-    console.log("handleFileUpload triggered with file:", file.name); // Add log
+  
+    console.log("handleFileUpload triggered with file:", file.name);
     setIsLoading(true);
     setShowSummary(false);
     setResponseData(null);
-
-    console.log("Simulating API call..."); // Add log
-    setTimeout(() => {
-      console.log("API simulation complete. Setting response data."); // Add log
-      setResponseData(mockResponse);
+  
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+  
+      const response = await fetch("http://127.0.0.1:5000/analyze", {
+        method: "POST",
+        body: formData,
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Server responded with status ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log("API response received:", data);
+      setResponseData(data);
+    } catch (error) {
+      console.error("Error during file upload or API call:", error);
+      setResponseData({ error: "Failed to analyze the document." });
+    } finally {
       setIsLoading(false);
-    }, 2000);
+    }
   };
+  
 
   const handleGenerateSummary = () => {
     console.log("Generating summary display");

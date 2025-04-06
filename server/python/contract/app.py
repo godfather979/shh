@@ -4,10 +4,10 @@ from werkzeug.utils import secure_filename
 import PyPDF2
 import pandas as pd
 import os
-import streamlit as st
 from groq import Groq
 from dotenv import load_dotenv
 import google.generativeai as genai
+from flask_cors import CORS
 
 load_dotenv()
 
@@ -15,52 +15,46 @@ load_dotenv()
 # Template for the Llama model
 template = (
     """
-    **Task:** Extract and analyze legal clauses from the provided contract text.
+    **Task:** Review and analyze the provided legal document for key points and potential risks.
     
     **Instructions:** 
-    - Extract all legal clauses.
-    - Categorize each clause based on its risk level (e.g., High, Medium, Low).
-    - Suggest changes for high-risk clauses.
-    - Provide the output in a concise tabular format.
+    - Identify important terms, conditions, or responsibilities mentioned in the document.
+    - Determine the type of legal document (e.g., contract, agreement, notice, policy, etc.).
+    - Categorize each key point based on its risk level (High, Medium, Low).
+    - Suggest simple and safer wording for high-risk points.
+    - Present the findings in a clear markdown format (not a table).
 
-    **Contract Text:**
+    **Legal Document:**
     {dom_content}
 
-    **Expected Output:**
-    | Clause | Risk Level | Suggested Changes |
-    |--------|------------|-------------------|
-    """
-)
+    **Expected Output (in Markdown):**
+    ```markdown
+    **Type of Document:** [Type here]
 
-# GDPR Compliance Check Template
-gdpr_template = (
-    """
-    **Task:** Check GDPR compliance of the provided contract text.
-    
-    **Instructions:**
-    - Compare the contract with GDPR guidelines.
-    - Identify non-compliant clauses.
-    - Suggest necessary modifications to ensure compliance.
-    
-    **GDPR Guidelines:**
-    {gdpr_guidelines}
-    
-    **Contract Text:**
-    {dom_content}
-    
-    **Expected Output:**
-    - Non-compliant clauses.
-    - Suggested modifications.
+    **Key Points Identified:**
+
+    1. **Point:** [Describe the important term or condition]
+       - **Risk Level:** High / Medium / Low
+       - **Suggested Changes (if High Risk):** [Suggest improvement]
+
+    2. **Point:** [Next important point...]
+       - **Risk Level:** ...
+       - **Suggested Changes (if any):** ...
+
+    [...continue for each important point...]
+
+    **Note:** This summary is intended to simplify the understanding of legal documents. For official interpretation or action, consult a legal professional.
+    ```
     """
 )
 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+print(os.getenv("GOOGLE_API_KEY"))
 
 # Initialize Gemini model
 gemini_model = genai.GenerativeModel("gemini-2.0-flash")
 
-@st.cache_data
 def parse_with_gemini(dom_chunks, parse_description):
     # Combine DOM chunks
     combined_content = " ".join(dom_chunks)
@@ -72,20 +66,6 @@ def parse_with_gemini(dom_chunks, parse_description):
     response = gemini_model.generate_content(prompt_text)
 
     return response.text
-
-@st.cache_data
-def check_gdpr_compliance(dom_chunks, gdpr_guidelines):
-    # Combine content into a single string
-    combined_content = " ".join(dom_chunks)
-
-    # Format the prompt using your GDPR template
-    prompt_text = gdpr_template.format(dom_content=combined_content, gdpr_guidelines=gdpr_guidelines)
-
-    # Generate response from Gemini
-    response = gemini_model.generate_content(prompt_text)
-
-    return response.text
-
 
 
 
@@ -99,12 +79,8 @@ def extract_text_from_pdf(uploaded_pdf):
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+CORS(app)
 
-# Load GDPR guidelines once at startup
-csv_filename = "gdpr_qa_train.csv"
-if not os.path.exists(csv_filename):
-    raise FileNotFoundError("GDPR guidelines CSV file not found.")
-gdpr_guidelines = "\n".join(pd.read_csv(csv_filename).iloc[:, 0].astype(str))
 
 @app.route('/analyze', methods=['POST'])
 def analyze_contract():
@@ -128,12 +104,10 @@ def analyze_contract():
         parse_description = "List all legal clauses in the given contract and categorize the high-risk ones, along with suggesting changes. Give output in tabular format. Keep the reply concise."
         parsed_output = parse_with_gemini(dom_chunks, parse_description)
 
-        # Step 3: GDPR Compliance Check
-        compliance_output = check_gdpr_compliance(dom_chunks, gdpr_guidelines)
+        
 
         return jsonify({
             'parsed_clauses': parsed_output,
-            'gdpr_compliance_report': compliance_output
         })
 
     return jsonify({'error': 'Invalid file type. Only PDFs are allowed.'}), 400
