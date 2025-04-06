@@ -4,7 +4,7 @@ import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const APP_NAME = "LexNova AI";
+const APP_NAME = "NyaySaathi";
 
 const SidebarDemo = () => {
   const pages = [

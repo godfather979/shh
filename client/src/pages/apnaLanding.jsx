@@ -16,7 +16,7 @@ const LegalAI = () => {
   const ctaRef = useRef(null);
   
   // Set name as a constant to use everywhere
-  const APP_NAME = "Law-dya cha AI";
+  const APP_NAME = "NyaySaathi";
   
   // Scroll animations
   const { scrollYProgress: heroScrollProgress } = useScroll({
