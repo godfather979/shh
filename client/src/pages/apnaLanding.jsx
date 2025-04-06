@@ -92,6 +92,22 @@ const LegalAI = () => {
     whyChooseRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const [videoOpacity, setVideoOpacity] = useState(1);
+
+  useEffect(() => {
+    const fadeTimeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        setVideoOpacity((prevOpacity) => Math.max(0, prevOpacity - 0.02));
+        if (videoOpacity <= 0) {
+          clearInterval(interval);
+        }
+      }, 100);
+    }, 3000);
+
+    return () => clearTimeout(fadeTimeout);
+  }, []);
+
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
       {/* Hero Section with Pattern Background */}
@@ -102,11 +118,27 @@ const LegalAI = () => {
         >
         {/* Abstract background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 opacity-70">
-            <div className="absolute inset-0" style={{ 
-            backgroundImage: "radial-gradient(circle at 25px 25px, rgba(0, 0, 255, 0.1) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(0, 0, 255, 0.1) 2%, transparent 0%)",
-            backgroundSize: "100px 100px" 
-            }}></div>   
-        </div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 25px 25px, rgba(0, 0, 255, 0.1) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(0, 0, 255, 0.1) 2%, transparent 0%)",
+            backgroundSize: "100px 100px",
+          }}
+        ></div>
+      </div>
+
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: videoOpacity, transition: 'opacity 0.5s ease-in-out' }}
+      >
+        <source src="/home_bg_video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
         
         <motion.div 
             className="relative z-10 text-center max-w-4xl px-4"
