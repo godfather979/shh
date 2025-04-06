@@ -63,6 +63,7 @@ const ApnaDocSummarizer = () => {
             data.parsed_clauses = data.parsed_clauses.replace(/^```(?:\w+)?\n?/, '')      // Removes the opening code block fence, e.g. ``` or ```markdown
             .replace(/\n?```$/, '') ;
             setResponseData(data.parsed_clauses);
+            console.log('Parsed clauses:', data.parsed_clauses);
 
             // setResponseData(data);
         } catch (error) {
