@@ -8,6 +8,7 @@ from groq import Groq
 from dotenv import load_dotenv
 import google.generativeai as genai
 from flask_cors import CORS
+import re
 
 load_dotenv()
 
@@ -23,12 +24,13 @@ template = (
     - Categorize each key point based on its risk level (High, Medium, Low).
     - Suggest simple and safer wording for high-risk points.
     - Present the findings in a clear markdown format (not a table).
+    - STRICTLY NOTHING ELSE NO UNWANTED TEXT ANYTHING OTHER THAN THE MARKDOWN FORMAT TEXT. 
 
     **Legal Document:**
     {dom_content}
 
-    **Expected Output (in Markdown):**
-    ```markdown
+    **Expected Output (in Markdown ( TEXT WITH APPROPRIATE MARKDOWN FORMATING SYMBOLS ONLY)):**
+    ```
     **Type of Document:** [Type here]
 
     **Key Points Identified:**
@@ -81,6 +83,30 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 CORS(app)
 
+def extract_markdown_from_response(response: str) -> str:
+    """
+    Extracts and cleans markdown content from a string response.
+    Works whether or not the response is valid JSON.
+    Removes 'parsed_clauses', 'markdown', and any outer quotes/brackets.
+    """
+    # Step 1: Remove 'parsed_clauses' key if present
+    cleaned = re.sub(r'"?parsed_clauses"?\s*:\s*', '', response, flags=re.IGNORECASE)
+
+    # Step 2: Remove "markdown" word (case insensitive) at the beginning
+    cleaned = re.sub(r'^\s*["\']?markdown\\?n?', '', cleaned, flags=re.IGNORECASE)
+
+    # Step 3: Remove outer JSON-like brackets/braces/quotes if present
+    cleaned = cleaned.strip()
+    if cleaned.startswith('{') and cleaned.endswith('}'):
+        cleaned = cleaned[1:-1].strip()
+    if cleaned.startswith('"') and cleaned.endswith('"'):
+        cleaned = cleaned[1:-1].strip()
+
+    # Step 4: Decode escaped newlines and quotes
+    cleaned = cleaned.encode().decode('unicode_escape')
+
+    return cleaned.strip()
+
 
 @app.route('/analyze', methods=['POST'])
 def analyze_contract():
@@ -103,6 +129,7 @@ def analyze_contract():
         # Step 2: Parse legal clauses
         parse_description = "List all legal clauses in the given contract and categorize the high-risk ones, along with suggesting changes. Give output in tabular format. Keep the reply concise."
         parsed_output = parse_with_gemini(dom_chunks, parse_description)
+        parsed_output = extract_markdown_from_response(parsed_output)
 
         
 
