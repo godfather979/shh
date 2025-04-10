@@ -51,23 +51,30 @@ export default function Create() {
                         Legal Document Categories
                     </h1>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                        {ILSI_CLASSES.map(category => (
-                            <Link
-                                to={`/create/${category}`}
-                                state={{ category }}
-                                key={category}
-                            >
-                                <Card className='flex flex-col h-full transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg'>
-                                    <CardHeader>
-                                    <CardTitle className="text-lg ">{category}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent className='flex-grow'>
-                                    <CardDescription className="text-md">
-                                            {descriptions[category]}
-                                        </CardDescription>
-                                    </CardContent>
-                                </Card>
-                            </Link>
+                        {ILSI_CLASSES.map((category, index) => (
+                            <div key={category} className="relative">
+                                <Link
+                                    to={index < 3 ? `/create/${category}` : '#'}
+                                    state={index < 3 ? { category } : undefined}
+                                    className={index >= 3 ? "pointer-events-none" : ""}
+                                >
+                                    <Card className='flex flex-col h-full transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg'>
+                                        <CardHeader>
+                                            <CardTitle className="text-lg ">{category}</CardTitle>
+                                        </CardHeader>
+                                        <CardContent className='flex-grow'>
+                                            <CardDescription className="text-md">
+                                                {descriptions[category]}
+                                            </CardDescription>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
+                                {index >= 3 && (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                                        <div className="text-white text-2xl font-bold">Coming Soon</div>
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </div>
                 </div>
