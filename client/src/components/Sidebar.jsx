@@ -4,7 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Home, SquarePen, Newspaper, Users, ReceiptText, GitCompareArrows, Handshake } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { UserButton, useUser } from "@clerk/clerk-react";
+// import { UserButton, useUser } from "@clerk/clerk-react";
 import { ModeToggle } from "./ModeToggle";
 
 const cn = (...classes) => classes.filter(Boolean).join(" ");

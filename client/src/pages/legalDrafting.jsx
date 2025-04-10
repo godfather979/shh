@@ -14,8 +14,26 @@ const LegalDrafting = () => {
   // Dummy data that would come from backend - now using the array structure you provided
   const dummyLegalDrafts = [
     {
-      "heading": "# Case Summary: Donoghue v Stevenson [1932] AC 562",
-      "summary": "## Facts:\nMrs. Donoghue consumed ginger beer purchased for her by a friend at a café. The bottle contained a decomposed snail, which she did not see until she had already drunk some of the beer. She subsequently became ill and sued the manufacturer, Stevenson, despite not having a direct contractual relationship with him.\n\n## Legal Issue:\nThe central legal question was whether Stevenson, as the manufacturer, owed a duty of care to Mrs. Donoghue, the ultimate consumer, in the absence of a contract between them.\n\n## Decision:\nThe House of Lords held that Stevenson did owe a duty of care to Mrs. Donoghue. This landmark case established the **'neighbour principle'**, articulated by Lord Atkin, which states that you owe a duty of care to your neighbour. Your neighbour is defined as 'persons who are so closely and directly affected by my act that I ought reasonably to have them in contemplation as being so affected when I am directing my mind to the acts or omissions which are called in question.'\n\n## Significance:\n* Established the modern tort of negligence.\n* Created the 'neighbour principle', a foundational concept in duty of care.\n* Recognized the liability of manufacturers to consumers even without a direct contractual relationship.\n* Significantly expanded the scope of potential negligence claims."
+      "heading": "# Case Summary: Legal Research Draft: Retrospective Service Tax Demand on Subcontracted Labor",
+      "summary": `
+
+### I. Case Summary:
+
+M/s Rohit Engineering Services ("the Petitioner") has filed a writ petition challenging a retrospective demand of ₹87,00,000 in service tax levied by the Commissioner of Central Excise and GST, Bhopal ("the Respondent"). The demand pertains to subcontracted labor services. The Petitioner argues that these services fall under the reverse charge mechanism, and thus, the Respondent erred in fastening liability under Section 73 of the Finance Act, 1994. The Respondent contends that the Petitioner failed to provide sufficient documentary evidence to support claimed tax exemptions. The core issue is the legality of the retrospective service tax demand, particularly considering the transition to the Goods and Services Tax (GST) regime.
+
+### II. Relation of Cited Judgments:
+
+The provided judgments, Kailash Electricals vs. CGST & CE Kanpur, while dealing with service tax and interpretations of "governmental authority" for exemptions, offer limited direct relevance to the Petitioner's case. They primarily address the scope of exemptions related to governmental entities and the mechanics of partial reverse charge mechanisms, including valuation and abatement. However, they indirectly highlight the complexities of service tax law and the potential for disputes arising from its interpretation, especially concerning exemptions and the shift to GST. The discussion regarding abatements and valuation options available to the service recipient underscores the importance of proper documentation, which is a key point of contention in the present case.
+
+### III. Legal Opinion:
+
+The Petitioner's argument hinges on the applicability of the reverse charge mechanism to the subcontracted labor services. If the services indeed fall under this mechanism, the primary liability for service tax payment would rest with the service recipient, not the Petitioner. The Respondent's counter-argument focuses on the lack of documentary evidence supporting the Petitioner’s claimed exemptions. This raises the question of the Petitioner's burden of proof in demonstrating eligibility for such exemptions.
+
+While the provided judgments do not directly address retrospective application of service tax demands, the principles of tax law, including those of fairness and due process, are relevant. The transition to GST further complicates the matter. If the relevant services were subsequently treated differently under GST, applying retrospective service tax demands could be seen as inequitable. The Petitioner's case could benefit from researching case law specifically addressing retrospective application of tax demands in the context of the transition to GST. Furthermore, establishing a clear timeline of events and demonstrating diligent attempts to comply with the prevailing tax regulations at the time the services were rendered will be crucial to the Petitioner's defense. The lack of documentary evidence, as highlighted by the Respondent, weakens the Petitioner's position. Therefore, exploring any available evidence to corroborate the claimed exemptions is paramount.
+
+### IV. Conclusion:
+
+The Petitioner's success depends on demonstrating that the services in question genuinely fall under the reverse charge mechanism and that they had acted in good faith by attempting to comply with the prevailing tax regulations. A comprehensive legal strategy must address the evidentiary burden and the implications of the transition to GST. Researching precedents specifically dealing with retrospective tax demands in similar transitional contexts would significantly bolster the Petitioner's arguments. Finally, a thorough review of all relevant documentation is crucial to identify any supporting evidence that might mitigate the Respondent's claim regarding insufficient documentation.`
     }
   ];
 

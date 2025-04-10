@@ -111,13 +111,7 @@
 
             { "label": "Officer Name", "type": "text" },
             { "label": "Officer Designation", "type": "text" },
-            { "label": "Seal of Office (Y/N)", "type": "checkbox" },
-
-            {
-                "label": "Applicant Photograph",
-                "type": "file",
-                "accept": "image/*"
-            }
+            { "label": "Seal of Office (Y/N)", "type": "checkbox" }
         ]
     },
     "Employee Bond for Non-Compete": {
@@ -279,4 +273,3 @@
         ]
     }
 }
-

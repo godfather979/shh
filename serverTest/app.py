@@ -46,16 +46,16 @@ groq_model = ChatGroq(
 # ────────────────────────────────────────────────────────────────────────────────
 legal_template = """
 You are a legal AI assistant with expertise in contract analysis and risk assessment.
-**Task:** Extract and analyze legal clauses from the provided contract text.
+*Task:* Extract and analyze legal clauses from the provided contract text.
 
-**Instructions:** 
+*Instructions:* 
 - Extract all legal clauses.
 - Categorize each clause based on its risk level (e.g., High, Medium, Low).
 - Suggest changes for high-risk clauses.
 - Provide the output in a concise tabular format.
-- Return the response as a **markdown table only**, with **no additional explanation**.
-- **DO NOT** use escaped characters like `\\\"` or `\"`. Use standard double quotes `"like this"`.
-- **DO NOT** use markdown symbols inside cell content (like `*`, `**`, `_`, etc.).
+- Return the response as a *markdown table only, with **no additional explanation*.
+- *DO NOT* use escaped characters like \\\" or \". Use standard double quotes "like this".
+- *DO NOT* use markdown symbols inside cell content (like *, **, _, etc.).
 - Keep your language simple, professional, and readable.
 - Keep each row clear, concise, and well-formatted.
 - Do not add any explanation outside the table.
@@ -63,32 +63,50 @@ You are a legal AI assistant with expertise in contract analysis and risk assess
 
 
 
-**Contract Text:**
+*Contract Text:*
 {dom_content}
 
 
-**Expected Output:**
+*Expected Output:*
 | Clause | Risk Level | Suggested Changes |
 |--------|------------|-------------------|
 
 
 """
 
-gdpr_template = """
-**Task:** Check GDPR compliance of the provided contract text.
 
-**Instructions:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gdpr_template = """
+*Task:* Check GDPR compliance of the provided contract text.
+
+*Instructions:*
 - Compare the contract with GDPR guidelines.
 - Identify non-compliant clauses.
 - Suggest necessary modifications to ensure compliance.
 
-**GDPR Guidelines:**
+*GDPR Guidelines:*
 {gdpr_guidelines}
 
-**Contract Text:**
+*Contract Text:*
 {dom_content}
 
-**Expected Output:**
+*Expected Output:*
 - Non-compliant clauses.
 - Suggested modifications.
 """
@@ -118,21 +136,21 @@ def check_gdpr_compliance(dom_chunks, gdpr_guidelines):
 
     # Format the prompt manually (same as gdpr_template logic)
     prompt = f"""
-**Task:** Analyze the provided contract text for GDPR compliance.
+*Task:* Analyze the provided contract text for GDPR compliance.
 
-**Instructions:**
+*Instructions:*
 - Extract all GDPR-relevant clauses.
 - Categorize each clause as Compliant, Partially Compliant, or Non-Compliant.
 - Suggest plain-language improvements for any that are not fully compliant.
 
-**GDPR Guidelines:**
+*GDPR Guidelines:*
 {gdpr_guidelines}
 
-**Expected Output:**
+*Expected Output:*
 | Clause | GDPR Compliance | Recommendation |
 |--------|------------------|----------------|
 
-**Contract Text:**
+*Contract Text:*
 {combined_content}
 """
 
@@ -251,7 +269,7 @@ def check_gdpr():
         dom_chunks = [contract_text[i:i+2000] for i in range(0, len(contract_text), 2000)]
         
         # Load GDPR guidelines
-        csv_filename = "/home/omkar/Documents/kjhacks/backend/gdpr_qa_train.csv"  # Update path as needed
+        csv_filename = "./gdpr_qa_train.csv"  # Update path as needed
         if not os.path.exists(csv_filename):
             return jsonify({"error": "GDPR guidelines file not found"}), 500
         
@@ -265,7 +283,10 @@ def check_gdpr():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
+# Health check endpoint
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200
 
 
 import torch
@@ -392,13 +413,10 @@ def judgment_prediction():
 
 
 
-# Health check endpoint
-@app.route('/health', methods=['GET'])
-def health_check():
-    return jsonify({"status": "healthy"}), 200
+
 
 # ────────────────────────────────────────────────────────────────────────────────
 # 🏁 Main Entry Point
 # ────────────────────────────────────────────────────────────────────────────────
-if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000)
+# if __name__ == "_main_":
+app.run(debug=True, host='0.0.0.0', port=5000)

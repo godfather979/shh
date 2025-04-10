@@ -54,7 +54,7 @@ export default function News() {
             }
         }
 
-        fetch('http://127.0.0.1:8000/api/news')
+        fetch('http://127.0.0.1:8001/api/news')
             .then(response => response.json())
             .then(data => {
                 setNewsItems(data.articles);
